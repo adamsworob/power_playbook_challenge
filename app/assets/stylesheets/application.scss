@@ -64,12 +64,15 @@ $extrabold: 700;
 
 // Header
 
-.header .reverse_avatar {
-  &[class*="_horizontal"] [class^="pb_avatar"] {
-    margin: 0 0 0 $space_sm;
-  }
-  > div {
-    width: 100%;
+.header {
+  border-bottom: 1px solid $border_light;
+  .reverse_avatar {
+    &[class*="_horizontal"] [class^="pb_avatar"] {
+      margin: 0 0 0 $space_sm;
+    }
+    > div {
+      width: 100%;
+    }
   }
 }
 
@@ -84,9 +87,15 @@ $extrabold: 700;
 
 // Dashboard
 
-.dashboard span.pb_nav_list_item_text {
-  display: flex;
-  justify-content: space-between;
+.dashboard {
+  border: 1px solid $border_light;
+  > div {
+    border: none;
+  }
+  span.pb_nav_list_item_text {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .highcharts-axis-labels.highcharts-yaxis-labels > text,
@@ -154,6 +163,7 @@ $extrabold: 700;
 .pipeline_and_ticket_graphs {
   > div {
     flex-basis: 0;
+    overflow: hidden;
   }
   [class^="grid"] {
     display: grid;

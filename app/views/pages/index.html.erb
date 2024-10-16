@@ -126,54 +126,53 @@
           <%= pb_rails("caption", props: { text: "Dashboard"}) %>
           <%= pb_rails("caption", props: { text: "Commerce Dashboard ", size: 'lg'}) %>
         </div>
-        <%= pb_rails("background", props: { background_color: "white", classname: "dashboard", margin_x: "sm" }) do %>
-          <%= pb_rails("card", props: { padding: "none", border_none: true }) do %>
-            <%= pb_rails("flex", props: {vertical: "center",spacing: "between"}) do %>
-              <%= pb_rails("title", props: { text: "Key Performance Indicators", tag: "h4", size: 4, padding: "sm", padding_left: "lg" }) %>
-              <%= pb_rails("circle_icon_button", props: { variant: "secondary", icon: "ellipsis-h", padding_right: "sm", padding_y: "xs", size: "lg", id: "dashboard-ellipsis-popover" }) %>
-            <% end %>
-            <%= pb_rails("popover", props: {
+        <%= pb_rails("card", props: { padding: "none", classname: "dashboard", margin_x: "sm", border_radius: "md" }) do %>
+          <%= pb_rails("flex", props: {vertical: "center",spacing: "between"}) do %>
+            <%= pb_rails("title", props: { text: "Key Performance Indicators", tag: "h4", size: 4, padding: "sm", padding_left: "lg" }) %>
+            <%= pb_rails("circle_icon_button", props: { variant: "secondary", icon: "ellipsis-h", padding_right: "sm", padding_y: "xs", size: "lg", id: "dashboard-ellipsis-popover" }) %>
+          <% end %>
+          <%= pb_rails("popover", props: {
               trigger_element_id: "dashboard-ellipsis-popover",
               tooltip_id: "tooltip-1",
               offset: true,
               position: "top"
             }) do %>
-              This ellipsis button would usually lead you to more options.
-            <% end %>
-            <%= pb_rails("section_separator") %>
-            <%= pb_rails("layout", props: {position: "left", size: "md", collapse: "md"}) do %>
-              <%= pb_rails("layout/sidebar") do %>
-                <%= pb_rails("nav", props: { highlight: false }) do %>
-                  <%= pb_rails("nav/item", props: { text: "Revenue", link: "#", padding_left: "md", padding_right: "xs", active: true, data: {"open-dialog": "dashboard-nav-item-revenue"} }) do %>
-                    <%= pb_rails("stat_change", props: {
+            This ellipsis button would usually lead you to more options.
+          <% end %>
+          <%= pb_rails("section_separator") %>
+          <%= pb_rails("layout", props: {position: "left", size: "md", collapse: "md"}) do %>
+            <%= pb_rails("layout/sidebar") do %>
+              <%= pb_rails("nav", props: { highlight: false }) do %>
+                <%= pb_rails("nav/item", props: { text: "Revenue", link: "#", padding_left: "md", padding_right: "xs", active: true, data: {"open-dialog": "dashboard-nav-item-revenue"} }) do %>
+                  <%= pb_rails("stat_change", props: {
                       change: "increase",
                       value: 26,
                     }) %>
-                  <% end %>
-                  <%= pb_rails("nav/item", props: { text: "Orders", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-orders"}}) do %>
-                    <%= pb_rails("stat_change", props: {
+                <% end %>
+                <%= pb_rails("nav/item", props: { text: "Orders", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-orders"}}) do %>
+                  <%= pb_rails("stat_change", props: {
                       change: "decrease",
                       value: 2,
                     }) %>
-                  <% end %>
-                  <%= pb_rails("nav/item", props: { text: "Profit", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-profit"} }) %>
-                  <%= pb_rails("nav/item", props: { text: "Average Check", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-average-check" }}) do %>
-                    <%= pb_rails("stat_change", props: {
+                <% end %>
+                <%= pb_rails("nav/item", props: { text: "Profit", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-profit"} }) %>
+                <%= pb_rails("nav/item", props: { text: "Average Check", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-average-check" }}) do %>
+                  <%= pb_rails("stat_change", props: {
                       change: "increase",
                       value: 5,
                     }) %>
-                  <% end %>
-                  <%= pb_rails("nav/item", props: { text: "Canceled", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-canceled"}}) do %>
-                    <%= pb_rails("stat_change", props: {
+                <% end %>
+                <%= pb_rails("nav/item", props: { text: "Canceled", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-canceled"}}) do %>
+                  <%= pb_rails("stat_change", props: {
                       change: "decrease",
                       value: 18,
                     }) %>
-                  <% end %>
-                  <%= pb_rails("nav/item", props: { text: "Repeat Sales", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-repeat-sales"} }) %>
                 <% end %>
+                <%= pb_rails("nav/item", props: { text: "Repeat Sales", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-repeat-sales"} }) %>
               <% end %>
-              <%= pb_rails("layout/body", props: { padding_x: "md", padding_bottom: "xl"}) do %>
-                <%= pb_rails("line_graph", props: { 
+            <% end %>
+            <%= pb_rails("layout/body", props: { padding_x: "md", padding_bottom: "xl"}) do %>
+              <%= pb_rails("line_graph", props: { 
                   id: "line-test", 
                   gradient: false, 
                   chart_data: @line_graph_data, 
@@ -181,7 +180,6 @@
                   x_axis_categories:['5/1','5/15','6/1','6/15','7/1','7/15','8/1','8/15','9/1','9/15','10/1','10/15', '11/1', '12/1', '11/15'], 
                   height: "35%"
                 }) %>
-              <% end %>
             <% end %>
           <% end %>
         <% end %>
@@ -304,7 +302,7 @@
           <% end %>
         <% end %>
         <%= pb_rails("flex", props: {align_items: "stretch", classname: "pipeline_and_ticket_graphs"}) do %>
-          <%= pb_rails("card", props: { flex_grow: 1, padding: "none", border_none: true, shadow: "deeper",margin: "sm" }) do %>
+          <%= pb_rails("card", props: { flex_grow: 1, padding: "none", margin: "sm" }) do %>
             <%= pb_rails("title", props: { text: "Pipeline Chart", tag: "h4", size: 4, padding: "lg" }) %>
             <% @pipeline_data.each do |info| %>
               <%= pb_rails("section_separator") %>
@@ -329,11 +327,11 @@
               <% end %>
             <% end %>
           <% end %>
-          <%= pb_rails("card", props: { flex_grow: 1, border_none: true, shadow: "deeper",padding:"none", margin: "sm"}) do %>
+          <%= pb_rails("card", props: { flex_grow: 1, padding:"none", margin: "sm"}) do %>
             <div class="gridone">
               <% @ticket_data.each do |ticket|%>
-                <%= pb_rails("background", props: { background_color: "white", padding_y: "lg"}) do %>
-                  <%= pb_rails("flex", props: {horizontal: "center", vertical: "center"}) do %>
+                <%= pb_rails("background", props: { background_color: "white"}) do %>
+                  <%= pb_rails("flex", props: {horizontal: "center", vertical: "center", padding_y: "lg"}) do %>
                     <%= pb_rails("flex/flex_item",props:{fixed_size: "215px"}) do %>
                       <%= pb_rails("icon_stat_value", props: { 
                         icon: ticket.icon, 
