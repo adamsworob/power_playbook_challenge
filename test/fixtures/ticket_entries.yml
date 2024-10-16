@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket_category: one
+  avatar: MyString
+  text: MyString
+
+two:
+  ticket_category: two
+  avatar: MyString
+  text: MyString

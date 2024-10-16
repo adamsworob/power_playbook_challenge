@@ -1,0 +1,327 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// Playbook App Configuration for Font Family
+$font_family_base: "Open Sans";
+
+// Enabled Weights in Open Sans
+$lighter: 200;
+$light: 200;
+$regular: 500;
+$bold: 700;
+$bolder: 700;
+$boldest: 700;
+$extrabold: 700;
+
+@import "reset";
+@import "font-awesome";
+@import "playbook";
+
+.body_container {
+  width: 100%;
+}
+
+@media screen and (max-width: $screen-sm-max) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: $screen-sm-max + 1) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+.header {
+  &,
+  nav,
+  > div,
+  > div > div {
+    width: 100%;
+  }
+}
+
+.main_section {
+  &,
+  > div {
+    width: 100%;
+  }
+}
+
+// Header
+
+.header .reverse_avatar {
+  &[class*="_horizontal"] [class^="pb_avatar"] {
+    margin: 0 0 0 $space_sm;
+  }
+  > div {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $screen-sm-max) {
+  [class^="pb_flex_kit"] [class*="_orientation_row"].header_top {
+    flex-direction: column;
+    .header_top_right {
+      margin-top: $space_sm;
+    }
+  }
+}
+
+// Dashboard
+
+.dashboard span.pb_nav_list_item_text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.highcharts-axis-labels.highcharts-yaxis-labels > text,
+.highcharts-grid.highcharts-yaxis-grid > path {
+  &:last-child {
+    display: none;
+  }
+}
+
+// Collect
+
+[class^="pb_layout_kit"].five_column_collect div.layout_body {
+  column-gap: $space_md;
+  > div {
+    min-width: 0;
+  }
+  @media screen and (min-width: $screen-lg-min + 1) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.fake_header {
+  border-bottom: none;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  min-height: 88px; // Keep header height consistent
+  + [class^="pb_card_kit"] {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+  [class^="pb_badge_kit"] {
+    @mixin badge-color($class, $color) {
+      &.#{$class} {
+        background-color: rgba($color, 0.1);
+        color: $color;
+      }
+    }
+
+    @include badge-color("product_4_highlight", $product_4_highlight);
+    @include badge-color("product_1_background", $product_1_background);
+    @include badge-color("product_9_background", $product_9_background);
+    @include badge-color("category_11", $category_11);
+    @include badge-color("product_10_highlight", $product_10_highlight);
+  }
+}
+
+.entries {
+  .pb_flex_item_kit.flex_grow_1,
+  .pb_body_kit {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pb_body_kit {
+    text-overflow: ellipsis;
+  }
+}
+
+// Pipeline
+
+.progress_flex_wrapper > div {
+  width: 100%;
+}
+
+.pipeline_and_ticket_graphs {
+  > div {
+    flex-basis: 0;
+  }
+  [class^="grid"] {
+    display: grid;
+    gap: 1px;
+    height: 100%;
+    background-color: #e4e8f0; /* $border_light */
+    grid-template: auto auto / auto auto;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 50% 50%;
+  }
+  .gridone {
+    > div {
+      &,
+      & > div {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    [class^="pb_icon_stat_value_kit"][class*="_horizontal"]
+      [class^="pb_icon_circle"] {
+      margin-right: $space_xxs;
+    }
+    @media screen and (max-width: $screen-sm-max) {
+      grid-auto-rows: auto;
+      grid-template-columns: 100%;
+    }
+  }
+  .gridtwo {
+    grid-template: repeat(2, auto) / repeat(4, 1fr);
+  }
+  [class^="pb_flex_kit"].pipeline_and_ticket_graphs {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: $screen-lg-min) {
+    &[class^="pb_flex_kit"] {
+      flex-direction: column;
+    }
+  }
+}
+
+// Custom Typography
+
+.pb_icon_kit {
+  font-weight: 600 !important;
+}
+
+.header {
+  .pb_icon_kit.far.fa-chevron-down {
+    font-size: 12px;
+  }
+}
+
+.header_heading {
+  .pb_caption_kit_lg {
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 1;
+  }
+  .pb_caption_kit_xs {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    margin-top: -5px;
+  }
+}
+
+.header_top_right_icon_values [class^="pb_badge_kit"] span {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+[class^="pb_nav_list"] .font_size_small .pb_nav_list_item_text {
+  font-size: 17px;
+}
+
+[class^="pb_nav_list"][class*="_horizontal"]
+  [class*="pb_nav_list_kit_item"][class*="pb_nav_list_item"][class*="_link"]
+  [class*="_text"] {
+  font-weight: 500;
+}
+
+.main_heading {
+  .pb_caption_kit_md {
+    font-size: 13px;
+    line-height: 0.5;
+  }
+  .pb_caption_kit_lg {
+    font-weight: 400;
+    text-transform: none;
+    color: black;
+    font-size: 35px;
+    letter-spacing: normal;
+  }
+}
+
+.dashboard {
+  .pb_title_kit_4 {
+    font-size: 17px;
+  }
+  [class*="ellipsis"] {
+    font-size: 18px;
+  }
+  .pb_nav_list_normal_vertical {
+    [class*="pb_body_kit"],
+    .pb_nav_list_item_text {
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .pb_icon_kit {
+      font-size: 20px;
+      font-style: normal;
+    }
+    [class*="pb_body_kit"] {
+      font-size: 18px;
+    }
+  }
+  .pb_body_kit_positive {
+    color: $product_10_highlight;
+  }
+}
+
+.esculation_category_name {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.fake_header [class^="pb_badge_kit"] {
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  span {
+    font-size: 16px;
+    font-weight: 900;
+  }
+}
+
+.ticket_status {
+  font-size: 17px;
+}
+
+.show_more_entries {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.pipeline_and_ticket_graphs .pb_title_kit_4 {
+  font-size: 17px;
+}
+
+.gridone {
+  .pb_title_kit_2 {
+    font-size: 50px;
+    font-weight: 400;
+  }
+  [class^="pb_caption_kit"] {
+    text-transform: none;
+    font-size: 15px;
+    letter-spacing: 0.07em;
+    font-weight: 600;
+  }
+}

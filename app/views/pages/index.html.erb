@@ -1,0 +1,355 @@
+<%= pb_rails("flex", props: {flex_direction: "column", align_items: "center", classname: "body_container"}) do %>
+  <%= pb_rails("flex/flex_item", props: {classname: "body_container"}) do %>
+    <%= pb_rails("background", props: { background_color: "white", classname: "header" }) do %>
+      <%= pb_rails("flex", props: {flex_direction: "column", align_items: "center"}) do %>
+        <%= pb_rails("flex/flex_item", props: {max_width: "xl", padding: "sm"}) do %>
+          <%= pb_rails("flex", props: {align_items: "center", justify_content: "spaceBetween", classname: "header_top"}) do %>
+            <%= pb_rails("flex/flex_item", props: {}) do %>
+              <%= pb_rails("flex", props: {align_items: "center", classname: "header_top_left"}) do %>
+                <%= pb_rails("flex/flex_item", props: {margin_x: "sm",}) do %>
+                  <%= pb_rails("icon", props: { icon: "bread-slice", size: "2x" }) %>
+                <% end %>
+                <%= pb_rails("flex/flex_item", props: {classname: "header_heading"}) do %>
+                  <%= pb_rails("caption", props: { text: "PB&J", size: 'lg' }) %>
+                  <%= pb_rails("caption", props: { text: "International", size: 'xs' }) %>
+                <% end %>
+              <% end %>
+            <% end %>
+            <%= pb_rails("flex/flex_item", props: {}) do %>
+              <%= pb_rails("flex", props: {align_items: "center", classname: "header_top_right"}) do %>
+                <%= pb_rails("flex/flex_item", props: {}) do %>
+                  <%= pb_rails("flex", props: {classname: "header_top_right_icon_values"}) do %>
+                    <%= pb_rails("flex/flex_item", props: {margin_right: "xl", padding_right: "xs"}) do %>
+                      <%= pb_rails("flex", props: {align_items: "center"}) do %>
+                        <%= pb_rails("icon", props: {
+                            icon: "bell",
+                            margin_right: "xxs"
+                          }) %>
+                        <%= pb_rails("badge", props: {
+                          text: "4",
+                          variant: "primary"
+                        }) %>
+                      <% end %>
+                    <% end %>
+                    <%= pb_rails("flex/flex_item", props: {margin_right: "xl", padding_right: "xs"}) do %>
+                      <%= pb_rails("flex", props: {align_items: "center"}) do %>
+                        <%= pb_rails("icon", props: {
+                          icon: "inbox",
+                          margin_right: "xxs",
+                          font_style: "fas"
+                        }) %>
+                        <%= pb_rails("badge", props: {
+                          text: "2",
+                          variant: "primary"
+                        }) %>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+                <%= pb_rails("flex/flex_item", props: {}) do %>
+                  <%= pb_rails("flex", props: {align_items: "center", classname: "header_top_right_user"}) do %>
+                    <%= pb_rails("flex/flex_item", props: {}) do %>
+                      <%= pb_rails("user", props: {
+                        name: "Indira Shree",
+                        orientation: "horizontal",
+                        align: "left",
+                        avatar_url: "https://randomuser.me/api/portraits/women/44.jpg",
+                        flex_direction: "rowReverse",
+                        classname: "reverse_avatar",
+                        margin_right: "xxs"
+                      }) %>
+                    <% end %>
+                    <%= pb_rails("flex/flex_item", props: {}) do %>
+                      <%= pb_rails("icon", props: { icon: "chevron-down" }) %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= pb_rails("flex/flex_item", props: {}) do %>
+          <%= pb_rails("section_separator") %>
+        <% end %>
+        <%= pb_rails("flex/flex_item", props: {max_width: "xl", padding_x: "sm", classname: "desktop-only" }) do %>
+          <%= render 'navigation/navigation', nav_orientation: "horizontal", top_padding: "none" %>
+        <% end %>
+        <%= pb_rails("collapsible", props: { name: "default-example", classname: "mobile-only" }) do %>
+          <%= pb_rails("collapsible/collapsible_main", props: { padding: "none", name: "default-main"}) do %>
+            <%= pb_rails("body", props: { text: "Navigation Menu"}) %>
+          <% end %>
+          <%= pb_rails("collapsible/collapsible_content", props: {padding_x: "none"}) do %>
+            <%= render 'navigation/navigation', nav_orientation: "vertical", top_padding: "lg" %>
+          <% end %>
+        <% end %>
+        <%= pb_rails("dialog", props: { 
+          id:"header-nav-item-dashboard", 
+          size: "sm", 
+          title: "Dashbaord", 
+          text: "If this went somewhere, it would be to the page corresponding to Dashboard.", 
+          cancel_button: "Cancel Button", 
+          confirm_button: "Okay", 
+          confirm_button_id: "confirm-button-1"
+      }) %>
+        <%= pb_rails("dialog", props: { 
+          id:"header-nav-item-products", 
+          size: "sm", 
+          title: "Products", 
+          text: "If this went somewhere, it would be to the page corresponding to Products.", 
+          cancel_button: "Cancel Button", 
+          confirm_button: "Okay", 
+          confirm_button_id: "confirm-button-1"
+      }) %>
+        <%= pb_rails("dialog", props: { 
+        id:"header-nav-item-in-progress", 
+        size: "sm", 
+        title: "In Progress", 
+        text: "If this went somewhere, it would be to the page corresponding to In Progress.", 
+        cancel_button: "Cancel Button", 
+        confirm_button: "Okay", 
+        confirm_button_id: "confirm-button-1"
+      }) %>
+        <%= pb_rails("dialog", props: { 
+        id:"header-nav-item-settings", 
+        size: "sm", 
+        title: "Settings", 
+        text: "If this went somewhere, it would be to the page corresponding to Settings.", 
+        cancel_button: "Cancel Button", 
+        confirm_button: "Okay", 
+        confirm_button_id: "confirm-button-1"
+      }) %>
+      <% end %>
+    <% end %>
+    <%= pb_rails("flex", props: {flex_direction: "column", align_items: "center", classname: "main_section"}) do %>
+      <%= pb_rails("flex/flex_item", props: {max_width: "xl"}) do %>
+        <div class="main_heading pt_lg pb_sm px_sm">
+          <%= pb_rails("caption", props: { text: "Dashboard"}) %>
+          <%= pb_rails("caption", props: { text: "Commerce Dashboard ", size: 'lg'}) %>
+        </div>
+        <%= pb_rails("background", props: { background_color: "white", classname: "dashboard", margin_x: "sm" }) do %>
+          <%= pb_rails("card", props: { padding: "none", border_none: true }) do %>
+            <%= pb_rails("flex", props: {vertical: "center",spacing: "between"}) do %>
+              <%= pb_rails("title", props: { text: "Key Performance Indicators", tag: "h4", size: 4, padding: "sm", padding_left: "lg" }) %>
+              <%= pb_rails("circle_icon_button", props: { variant: "secondary", icon: "ellipsis-h", padding_right: "sm", padding_y: "xs", size: "lg", id: "dashboard-ellipsis-popover" }) %>
+            <% end %>
+            <%= pb_rails("popover", props: {
+              trigger_element_id: "dashboard-ellipsis-popover",
+              tooltip_id: "tooltip-1",
+              offset: true,
+              position: "top"
+            }) do %>
+              This ellipsis button would usually lead you to more options.
+            <% end %>
+            <%= pb_rails("section_separator") %>
+            <%= pb_rails("layout", props: {position: "left", size: "md", collapse: "md"}) do %>
+              <%= pb_rails("layout/sidebar") do %>
+                <%= pb_rails("nav", props: { highlight: false }) do %>
+                  <%= pb_rails("nav/item", props: { text: "Revenue", link: "#", padding_left: "md", padding_right: "xs", active: true, data: {"open-dialog": "dashboard-nav-item-revenue"} }) do %>
+                    <%= pb_rails("stat_change", props: {
+                      change: "increase",
+                      value: 26,
+                    }) %>
+                  <% end %>
+                  <%= pb_rails("nav/item", props: { text: "Orders", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-orders"}}) do %>
+                    <%= pb_rails("stat_change", props: {
+                      change: "decrease",
+                      value: 2,
+                    }) %>
+                  <% end %>
+                  <%= pb_rails("nav/item", props: { text: "Profit", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-profit"} }) %>
+                  <%= pb_rails("nav/item", props: { text: "Average Check", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-average-check" }}) do %>
+                    <%= pb_rails("stat_change", props: {
+                      change: "increase",
+                      value: 5,
+                    }) %>
+                  <% end %>
+                  <%= pb_rails("nav/item", props: { text: "Canceled", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-canceled"}}) do %>
+                    <%= pb_rails("stat_change", props: {
+                      change: "decrease",
+                      value: 18,
+                    }) %>
+                  <% end %>
+                  <%= pb_rails("nav/item", props: { text: "Repeat Sales", link: "#", padding_left: "md", padding_right: "xs", data: {"open-dialog": "dashboard-nav-item-repeat-sales"} }) %>
+                <% end %>
+              <% end %>
+              <%= pb_rails("layout/body", props: { padding_x: "md", padding_bottom: "xl"}) do %>
+                <%= pb_rails("line_graph", props: { 
+                  id: "line-test", 
+                  gradient: false, 
+                  chart_data: @line_graph_data, 
+                  point_start: 0, 
+                  x_axis_categories:['5/1','5/15','6/1','6/15','7/1','7/15','8/1','8/15','9/1','9/15','10/1','10/15', '11/1', '12/1', '11/15'], 
+                  height: "35%"
+                }) %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= pb_rails("dialog", props: { 
+          id:"dashboard-nav-item-revenue", 
+          size: "sm", 
+          title: "Revenue", 
+          text: "If this went somewhere, it would be somewhere corresponding to Revenue.", 
+          cancel_button: "Cancel Button", 
+          confirm_button: "Okay", 
+          confirm_button_id: "confirm-button-1"
+        }) %>
+        <%= pb_rails("dialog", props: { 
+          id:"dashboard-nav-item-orders", 
+          size: "sm", 
+          title: "Orders", 
+          text: "If this went somewhere, it would be somewhere corresponding to Orders.", 
+          cancel_button: "Cancel Button", 
+          confirm_button: "Okay", 
+          confirm_button_id: "confirm-button-1"
+        }) %>
+        <%= pb_rails("dialog", props: { 
+          id:"dashboard-nav-item-profit", 
+          size: "sm", 
+          title: "Profit", 
+          text: "If this went somewhere, it would be somewhere corresponding to Profit.", 
+          cancel_button: "Cancel Button", 
+          confirm_button: "Okay", 
+          confirm_button_id: "confirm-button-1"
+        }) %>
+        <%= pb_rails("dialog", props: { 
+          id:"dashboard-nav-item-average-check", 
+          size: "sm", 
+          title: "Average Check", 
+          text: "If this went somewhere, it would be somewhere corresponding to Average Check.", 
+          cancel_button: "Cancel Button", 
+          confirm_button: "Okay", 
+          confirm_button_id: "confirm-button-1"
+        }) %>
+        <%= pb_rails("dialog", props: { 
+          id:"dashboard-nav-item-canceled", 
+          size: "sm", 
+          title: "Canceled", 
+          text: "If this went somewhere, it would be somewhere corresponding to Canceled.", 
+          cancel_button: "Cancel Button", 
+          confirm_button: "Okay", 
+          confirm_button_id: "confirm-button-1"
+        }) %>
+        <%= pb_rails("dialog", props: { 
+          id:"dashboard-nav-item-repeat-sales", 
+          size: "sm", 
+          title: "Repeat Sales", 
+          text: "If this went somewhere, it would be somewhere corresponding to Repeat Sales.", 
+          cancel_button: "Cancel Button", 
+          confirm_button: "Okay", 
+          confirm_button_id: "confirm-button-1"
+        }) %>
+        <%= pb_rails("caption", props: { text: "This weeks ticket esculations", padding: "sm", text_align: "center", classname: "esculation_category_name" }) %>
+        <%= pb_rails("layout", props: { layout: "collection", collapse: "xl", classname: "five_column_collect" }) do %>
+          <%= pb_rails("layout/body", props: {padding_x: "sm", padding_bottom: "sm"}) do %>
+            <% @ticket_categories.each do |category| %>
+              <%= pb_rails("flex", props: { vertical: "center", flex_direction: "column", class: "double_card", align_items: "stretch" }) do %>
+                <%= pb_rails("card", props: { padding: "sm", classname: "fake_header", justify_content: "center", highlight: {position: "side", color: category.color} }) do %>
+                  <%= pb_rails("flex", props: { vertical: "center", justify_content: "spaceBetween" }) do %>
+                    <%= pb_rails("body", props: {
+                      margin_y: "xs",
+                      margin_left: "xxs",
+                      margin_right: "sm",
+                      text: category.name,
+                      classname: "esculation_category_name"
+                    }) %>
+                    <%= pb_rails("badge", props: {
+                      text: category.value,
+                      classname: category.color,
+                      rounded: true,
+                      padding_x: "xs"
+                    }) %>
+                  <% end %>
+                <% end %>
+                <%= pb_rails("card", props: { padding: "none", classname: "entries" }) do %>
+                  <% category.ticket_entries.each_with_index do |tickets, index| %>
+                    <% if index <= 5 %>
+                      <%= pb_rails("flex", props: { padding_x: "sm", padding_y: "xs", vertical: "center" }) do %>
+                        <%= pb_rails("flex/flex_item") do %>
+                          <%= pb_rails("avatar", props: {
+                            name: tickets.name,
+                            size: "xs",
+                            image_alt: "#{tickets.name} avatar",
+                            image_url: tickets.avatar
+                          }) %>
+                        <% end %>
+                        <%= pb_rails("flex/flex_item", props: { flex_grow: 1 }) do %>
+                          <%= pb_rails("body", props: { text: tickets.text, padding_x: "xs", classname: "ticket_status" }) %>
+                        <% end %>
+                        <%= pb_rails("flex/flex_item") do %>
+                          <%= pb_rails("icon", props: { icon: "chevron-right", size: "xs" }) %>
+                        <% end %>
+                      <% end %>
+                      <%= pb_rails("section_separator") unless tickets == category.ticket_entries.last %>
+                    <% else %>
+                      <%#= pb_rails("section_separator") %>
+                      <%= pb_rails("flex", props: { padding: "xs", padding_left: "sm", padding_y: "none", vertical: "center", justify_content: "center" }) do %>
+                        <%= pb_rails("flex/flex_item") do %>
+                          <%= pb_rails("button", props: { text: "Show More", variant: "link", classname: "show_more_entries", id: "show-more-tooltip-#{category.name}" }) %>
+                        <% end %>
+                      <% end %>
+                      <%= pb_rails("tooltip", props: {
+                        trigger_element_selector: "#show-more-tooltip-#{category.name}",
+                        tooltip_id: "show-more-tooltip-#{category.name}",
+                        position: 'bottom'
+                      }) do %>
+                        Clicking on Show More would show more.
+                      <% end %>
+                      <% break %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= pb_rails("flex", props: {align_items: "stretch", classname: "pipeline_and_ticket_graphs"}) do %>
+          <%= pb_rails("card", props: { flex_grow: 1, padding: "none", border_none: true, shadow: "deeper",margin: "sm" }) do %>
+            <%= pb_rails("title", props: { text: "Pipeline Chart", tag: "h4", size: 4, padding: "lg" }) %>
+            <% @pipeline_data.each do |info| %>
+              <%= pb_rails("section_separator") %>
+              <%= pb_rails("flex", props: {vertical: "center",spacing: "between", padding_y: "sm", padding_x: "lg"}) do %>
+                <%= pb_rails("flex/flex_item", props: {fixed_size: "120px"}) do %>
+                  <%= pb_rails("caption", props: { text: info.label, size: 'xs' }) %>
+                <% end %>
+                <%= pb_rails("flex/flex_item", props: {grow:true, classname: "pipe_and_percentage_column", padding_x: "sm"}) do %>
+                  <%= pb_rails("flex", props: {vertical: "center", spacing: "around", classname: "progress_flex_wrapper"}) do %>
+                    <div class="pb_progress_simple_wrapper_left">
+                      <div class="pb_progress_simple_kit_left" style="width:<%= info.percent %>%;">
+                        <div class="progress_simple_value" style="width:100%;">
+                        </div>
+                      </div>
+                      <%= pb_rails("caption", props: { margin_left: "md", text: "#{info.percent}%", size: 'xs' }) %>
+                    </div>
+                  <% end %>
+                <% end %>
+                <%= pb_rails("flex/flex_item") do %>
+                  <%= pb_rails("body", props: {text: "#{number_with_delimiter(info.value)}"}) %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+          <%= pb_rails("card", props: { flex_grow: 1, border_none: true, shadow: "deeper",padding:"none", margin: "sm"}) do %>
+            <div class="gridone">
+              <% @ticket_data.each do |ticket|%>
+                <%= pb_rails("background", props: { background_color: "white", padding_y: "lg"}) do %>
+                  <%= pb_rails("flex", props: {horizontal: "center", vertical: "center"}) do %>
+                    <%= pb_rails("flex/flex_item",props:{fixed_size: "215px"}) do %>
+                      <%= pb_rails("icon_stat_value", props: { 
+                        icon: ticket.icon, 
+                        variant: ticket.variant,
+                        size: ticket.size, 
+                        text: ticket.text, 
+                        value: number_with_delimiter(ticket.value) 
+                      }) %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

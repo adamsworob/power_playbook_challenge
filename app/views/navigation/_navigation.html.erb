@@ -1,0 +1,6 @@
+<%= pb_rails("nav", props: { orientation: nav_orientation, padding_top: top_padding }) do %>
+  <%= pb_rails("nav/item", props: { text: "Dashboard", padding_x: "sm", link: "#", font_size:"small", active: true, data: {"open-dialog": "header-nav-item-dashboard"} }) %>
+  <%= pb_rails("nav/item", props: { text: "Products", padding_x: "sm", link: "#", font_size:"small", data: {"open-dialog": "header-nav-item-products"} }) %>
+  <%= pb_rails("nav/item", props: { text: "In Progress", padding_x: "sm", link: "#", font_size:"small", data: {"open-dialog": "header-nav-item-in-progress"} }) %>
+  <%= pb_rails("nav/item", props: { text: "Settings", padding_x: "sm", link: "#", font_size:"small", data: {"open-dialog": "header-nav-item-settings"} }) %>
+<% end %>
