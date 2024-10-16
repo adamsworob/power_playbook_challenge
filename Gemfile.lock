@@ -96,6 +96,8 @@ GEM
     erubi (1.12.0)
     execjs (2.9.1)
     ffi (1.16.3)
+    font-awesome-sass (6.5.2)
+      sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.4)
@@ -275,6 +277,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  font-awesome-sass
   importmap-rails
   jbuilder
   playbook_ui (~> 13.27.0)
@@ -282,6 +285,7 @@ DEPENDENCIES
   rails (~> 7.0.8)
   react-rails
   sass-rails
+  sassc-rails
   selenium-webdriver
   sprockets-rails
   sqlite3
