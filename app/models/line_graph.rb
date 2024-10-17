@@ -1,0 +1,2 @@
+class LineGraph < ApplicationRecord
+end
