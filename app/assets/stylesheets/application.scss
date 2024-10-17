@@ -206,6 +206,9 @@ $extrabold: 700;
   @media screen and (max-width: $screen-lg-min) {
     &[class^="pb_flex_kit"] {
       flex-direction: column;
+      > div {
+        flex-basis: auto;
+      }
     }
   }
 }

@@ -85,7 +85,7 @@
         <%= pb_rails("dialog", props: { 
           id:"header-nav-item-dashboard", 
           size: "sm", 
-          title: "Dashbaord", 
+          title: "Dashboard", 
           text: "If this went somewhere, it would be to the page corresponding to Dashboard.", 
           cancel_button: "Cancel Button", 
           confirm_button: "Okay", 
@@ -122,10 +122,10 @@
     <% end %>
     <%= pb_rails("flex", props: {flex_direction: "column", align_items: "center", classname: "main_section"}) do %>
       <%= pb_rails("flex/flex_item", props: {max_width: "xl"}) do %>
-        <div class="main_heading pt_lg pb_sm px_sm">
+        <%= pb_rails("flex", props: {flex_direction: "column", padding_top: "lg", padding_bottom: "sm", padding_x: "sm", classname: "main_heading"}) do %>
           <%= pb_rails("caption", props: { text: "Dashboard"}) %>
           <%= pb_rails("caption", props: { text: "Commerce Dashboard ", size: 'lg'}) %>
-        </div>
+        <% end %>
         <%= pb_rails("card", props: { padding: "none", classname: "dashboard", margin_x: "sm", border_radius: "md" }) do %>
           <%= pb_rails("flex", props: {vertical: "center",spacing: "between"}) do %>
             <%= pb_rails("title", props: { text: "Key Performance Indicators", tag: "h4", size: 4, padding: "sm", padding_left: "lg" }) %>
